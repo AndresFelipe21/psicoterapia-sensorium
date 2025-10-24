@@ -1,7 +1,16 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 export default function Hero() {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/agendar"); // 👈 Cambia esta ruta por la que corresponda a tu página de datos personales
+  };
+
   return (
-    <section 
-      className="flex flex-col md:flex-row items-center justify-between px-40 py-15 bg-no-repeat bg-[length:40%] bg-[position:right_50%]"
+    <section
+      className="flex flex-col md:flex-row items-center justify-between px-10 py-15 bg-no-repeat bg-[length:40%] bg-[position:right_50%]"
       style={{ backgroundImage: "url('/principal.png')" }}
     >
       <div className="max-w-lg">
@@ -11,11 +20,15 @@ export default function Hero() {
         <h5 className="text-3xl font-bold leading-snug text-gray-700">
           Sesiones de terapia online personalizadas para tu bienestar emocional
         </h5>
-        <button className="mt-6 px-6 py-3 bg-[#3FB6A8] text-white rounded-lg hover:bg-[#3FB6A8]">
+        <button
+          onClick={handleClick}
+          className="mt-6 px-6 py-3 bg-[#3FB6A8] text-white rounded-lg hover:bg-[#36a296]"
+        >
           Agendar una cita
         </button>
       </div>
     </section>
-  )
+  );
 }
+
 
